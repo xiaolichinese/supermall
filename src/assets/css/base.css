@@ -1,0 +1,77 @@
+/* 引用normalize.css */
+@import "./normalize.css";
+
+/*:root 伪类-> 获取根元素，即html，只是写的时候，喜欢写成root */
+:root {
+  /* 如下CSS里面定义了几个变量。整个项目里面是可以使用less和sass的,我们的此项目使用css */
+    
+   
+  /* 文字颜色，定义了变量，在后面body中的 color: var(--color-text);中使用变量 */
+  /* 一般文字颜色就设置为#666 */
+  --color-text: #666;
+  /* 文字高亮颜色 */
+  --color-high-text: #ff5777;
+    
+  /* tintColor表示整体背景颜色[即我们涂上去的一个颜色]，用途：导航栏 */
+  --color-tint: #ff8198;
+  /* 白色背景 */
+  --color-background: #fff;
+  /* 整个应用程序的字体大小 */
+  --font-size: 14px;
+  --line-height: 1.5;
+    
+   /* 
+    	定义完变量之后，到时候就可以在其他地方使用这个变量。
+    	在这里，使用less和scss都是可以的。
+    	在Vue中，使用less和scss在定义变量、相关的东西会更加简单。
+    	在CSS中也可以定义变量的。
+    */
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* 字体系列 */
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  user-select: none;
+  /* 禁止用户鼠标在页面上选中文字/图片等 */
+  -webkit-tap-highlight-color: transparent;
+  /* webkit是苹果浏览器引擎，tap点击，highlight背景高亮，color颜色，颜色用数值调节 */
+  background: var(--color-background);
+  color: var(--color-text);
+  /* rem vw/vh */
+  width: 100vw;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* 清除浮动 */
+.clear-fix::after {
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.clear-fix {
+  zoom: 1;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
